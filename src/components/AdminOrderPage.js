@@ -9,7 +9,7 @@ const [orders,setOrders] = useState(null)
 const deleivered = async (key,orderid)=>{
 
 
-  const res = await  fetch("http://localhost:5000/api/orders",{
+  const res = await  fetch("https://emommerce-project2.onrender.com/api/orders",{
     method:"DELETE",
     credentials:"include",
     headers:{
@@ -30,7 +30,7 @@ const deleivered = async (key,orderid)=>{
 }
 
   const getOrders = async  ()=>{
-     const res = await fetch("http://localhost:5000/api/orders",{
+     const res = await fetch("https://emommerce-project2.onrender.com/api/orders",{
       credentials:"include"
      })
      const response = await  res.json()

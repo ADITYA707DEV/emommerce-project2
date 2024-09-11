@@ -31,7 +31,7 @@ function Card() {
 
    
 
-    const res = await fetch("http://localhost:5000/items/getallitems",{
+    const res = await fetch("https://emommerce-project2.onrender.com/items/getallitems",{
       method: "POST",
       headers:{
         "Content-Type": "application/json",

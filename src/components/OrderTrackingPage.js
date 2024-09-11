@@ -7,7 +7,7 @@ function OrderTrackingPage() {
   const [trackedOrders, setTrackedOrders] = useState(null)
 
   const removeOrder = async  (id)=>{
-    const res = await fetch("http://localhost:5000/user/orderTracking",{
+    const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking",{
       method: "DELETE",
       credentials:"include",
       headers:{
@@ -24,7 +24,7 @@ function OrderTrackingPage() {
     getTrackedOrders()
   }
   const getTrackedOrders = async () => {
-    const res = await fetch("http://localhost:5000/user/orderTracking", { credentials: "include" })
+    const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking", { credentials: "include" })
     const response = await res.json()
     
     setTrackedOrders(response.orderTracking)

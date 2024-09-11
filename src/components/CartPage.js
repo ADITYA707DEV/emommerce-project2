@@ -20,7 +20,7 @@ function CartPage() {
 
   
      const onDeleivery = async ()=>{
-        const res = await fetch("http://localhost:5000/user/orderTracking", {
+        const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -46,7 +46,7 @@ function CartPage() {
       
       if(res.status === 200){
       
-      const res2 = await fetch("http://localhost:5000/api/orders", {
+      const res2 = await fetch("https://emommerce-project2.onrender.com/api/orders", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

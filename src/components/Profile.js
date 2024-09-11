@@ -22,7 +22,7 @@ setUserData({...userData,city:e.target.value})
 
 const handleLogout = async ()=>{
 
-const res = await fetch("http://localhost:5000/user/userlogout",{
+const res = await fetch("https://emommerce-project2.onrender.com/user/userlogout",{
   method: "GET",
   
    credentials: 'include'
@@ -34,7 +34,7 @@ setDisable(true)
 }
 
 const handleDelete = async  ()=>{
-   const res = await fetch("http://localhost:5000/user/deleteUserAccount",{
+   const res = await fetch("https://emommerce-project2.onrender.com/user/deleteUserAccount",{
     method:"DELETE",
     credentials:"include"
    })
@@ -64,7 +64,7 @@ const handleOnChange = (e)=>{
 const submit = async  (e)=>{
   e.preventDefault()
   
-  const response = await fetch(("http://localhost:5000/user/getuserdetail"),{
+  const response = await fetch(("https://emommerce-project2.onrender.com/user/getuserdetail"),{
     method:"POST",
     headers:{
       "Content-Type": "application/json"

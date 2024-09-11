@@ -24,7 +24,7 @@ function ModalNew(props) {
        file.append("file",categoryImage)
       
        const imageResponse = await axios({
-        url:"http://localhost:5000/api/categoryimage",
+        url:"https://emommerce-project2.onrender.com/api/categoryimage",
       
         params:{category:ctype},
         withCredentials: true,

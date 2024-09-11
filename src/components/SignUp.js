@@ -21,7 +21,7 @@ function SignUp() {
 
   
 
-    const response = await fetch("http://localhost:5000/user/userAccount", {
+    const response = await fetch("https://emommerce-project2.onrender.com/user/userAccount", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
