@@ -12,7 +12,7 @@ const stripeRoute = require("./routes/stripePayment")
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
 
-port = process.env.port || "5000"
+port = process.env.PORT || "5000"
 
 
 
