@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false}))
 app.use(cors({
     credentials:true,
 
-    origin:["http://localhost:3000","https://emommerce-project2.onrender.com"]
+    origin:["https://emommerce-project2.onrender.com","http://localhost:3000",]
 }))
 
 
@@ -59,5 +59,5 @@ if(process.env.NODE_ENV == "production"){
 
 
 app.listen(port,()=>{
-    console.log("app is listening on port 5000")
+    
 })

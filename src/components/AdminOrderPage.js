@@ -7,7 +7,7 @@ function AdminOrderPage() {
 const [orders,setOrders] = useState(null)
 
 const deleivered = async (key,orderid)=>{
-
+ 
 
   const res = await  fetch("https://emommerce-project2.onrender.com/api/orders",{
     method:"DELETE",

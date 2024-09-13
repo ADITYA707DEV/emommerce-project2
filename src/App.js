@@ -27,9 +27,9 @@ function App() {
 const dispatch =  useDispatch()
 
   const getKeeperDetails =  async ()=>{
-    const res1 = await fetch("https://emommerce-project2.onrender.com/api/keeperDetails")
+    const res1 = await fetch("http://localhost:5000/api/keeperDetails")
     const response1 = await res1.json()
-    const res2 = await fetch("https://emommerce-project2.onrender.com/api/categoryimage")
+    const res2 = await fetch("http://localhost:5000/api/categoryimage")
     const response2 = await res2.json()
     
     

@@ -122,7 +122,7 @@ router.post("/getallitems",body("tag").not().isEmpty(),async(req,res)=>{
 
     res.send(items)
   } catch (error) {
-   
+   console.log(error)
     res.status(500).send({message:"internal server error happened"})
   }
 })
@@ -136,7 +136,7 @@ router.get("/getallitems",async(req,res)=>{
     
     res.send(items)
   } catch (error) {
-   
+   console.log(error)
     res.status(500).send({message:"internal server error happened"})
   }
 })
@@ -191,6 +191,7 @@ router.get("/toprated",async (req,res)=>{
     res.send({tr:auser})
 
   } catch (error) {
+    console.log(error)
     res.status(500).send({message:"some error occured"})
   }
 })

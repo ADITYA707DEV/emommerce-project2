@@ -81,7 +81,7 @@ function CartPage() {
 
     const paying = async () => {
         const stripe = await loadStripe('pk_test_51PuatxP5i1YBGuOcOEg0nJWxy0pcdmL29JePtCJAs7xyQOddpVh8yIBhWJ8s7fNuWAL7F66FbKmdJWc3dxYG054O008JTd4HAL');
-        const response = await fetch("http://localhost:5000/payment/checkout",{
+        const response = await fetch("https://emommerce-project2.onrender.com/payment/checkout",{
           
             method:"POST",
             credentials:"include",
