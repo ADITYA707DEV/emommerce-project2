@@ -192,10 +192,10 @@ router.post("/orderTracking",verifyUser3,async (req,res)=>{
     console.log(error)
    }
 })
-router.get("/orderTracking",verifyUser2,async (req,res)=>{
+router.post("/getorders",verifyUser2,async (req,res)=>{
   try {
-   
-  const orders =  await orderTracking.find({})
+
+  const orders =  await orderTracking.find({user:req.body.user})
    res.send({orderTracking:orders})
   } catch (error) {
    res.status(500).send({message:"internal server error"})

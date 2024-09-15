@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import  {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function OrderTrackingPage() {
   const [trackedOrders, setTrackedOrders] = useState(null)
+  const details = useSelector((state)=>{return state.userData})
 
   const removeOrder = async  (id)=>{
     const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking",{
@@ -24,7 +26,17 @@ function OrderTrackingPage() {
     getTrackedOrders()
   }
   const getTrackedOrders = async () => {
-    const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking", { credentials: "include" })
+    const res = await fetch("https://emommerce-project2.onrender.com/user/getorders" , { 
+      method:"POST",
+      credentials: "include",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({
+        user: details.data.email
+      })
+    
+    })
     const response = await res.json()
     
     setTrackedOrders(response.orderTracking)
@@ -37,11 +49,11 @@ function OrderTrackingPage() {
     <div>
       <div className='border border-1 shadow-sm rounded fs-4 p-2 m-2 w-50 m-auto'><span className='text-primary'>User-Orders</span></div>
       <div className='d-flex flex-column justify-content-center align-items-center m-4'>
-       {trackedOrders&& trackedOrders.map((order)=>{return <div className='w-75  border border-1 p-2'>
+       {trackedOrders&& trackedOrders.map((order)=>{return <div key={order._id} className='w-75  border border-1 p-2'>
           <span className='text-primary mx-1'>status: </span> {order.status == "pending"?<span className="badge text-bg-warning">pending</span>:<div className='d-inline '><span className="badge text-bg-success mx-2">deleivered</span><FontAwesomeIcon icon={faXmark} style={{cursor:"pointer"}} onClick={()=>{removeOrder(order._id)}}/></div>}
 
           <div className='d-flex flex-column  p-2'>
-            {order.OrderItems.map((o)=>{return <div className="card mb-3 " style={{ maxWidth: "540px" }}>
+            {order.OrderItems.map((o)=>{return <div className="card mb-3 " key={o._id} style={{ maxWidth: "540px" }}>
               <div className="row g-0">
                 <div className="col-md-3">
                   <img src={o.src} className=" rounded-start" style={{ maxHeight: "150px" }} alt="..." />

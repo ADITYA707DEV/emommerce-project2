@@ -103,12 +103,12 @@ function CartPage() {
        
         
         
-        // const response = await fetch("http://localhost:5000/payment/pay",{S
+        // const response = await fetch("https://emommerce-project2.onrender.com/payment/pay",{S
         //     method:"GET"
 
         // })
         // const res = await response.json()
-        // const paymentResponse = await fetch("http://localhost:5000/payment/pay",{
+        // const paymentResponse = await fetch("https://emommerce-project2.onrender.com/payment/pay",{
         //     method:"POST",
         //     headers: {
         //         "Content-Type": "application/json"

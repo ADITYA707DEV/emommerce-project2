@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false}))
 app.use(cors({
     credentials:true,
 
-    origin:["https://emommerce-project2.onrender.com","http://localhost:3000",]
+    origin:["https://emommerce-project2.onrender.com","http://localhost:3000","http://localhost:5000",]
 }))
 
 
@@ -39,7 +39,7 @@ app.use("/payment",stripeRoute)
 const __dirname1 = path.resolve()
 
 
-if(process.env.NODE_ENV == "production"){
+if(process.env.NODE_ENV == "product"){
   
   app.use(express.static(path.join(__dirname1,"./build")))
   app.get("*",(req,res)=>{
