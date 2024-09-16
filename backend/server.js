@@ -39,7 +39,7 @@ app.use("/payment",stripeRoute)
 const __dirname1 = path.resolve()
 
 
-if(process.env.NODE_ENV == "product"){
+if(process.env.NODE_ENV == "production"){
   
   app.use(express.static(path.join(__dirname1,"./build")))
   app.get("*",(req,res)=>{
