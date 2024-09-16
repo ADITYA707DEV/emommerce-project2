@@ -66,7 +66,7 @@ router.post("/skAccount", [body("name").not().isEmpty().isLength({ min: 3 }), bo
 const storage = multer.diskStorage({
 
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../../src/categoryimages"))
+    cb(null, path.join(__dirname, "./src/categoryimages"))
   },
   filename: (req, file, cb) => {
     cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname)
@@ -117,7 +117,7 @@ router.post("/categoryimage", fetchUser, uploadStorage.single("file"), async (re
         "categoryimage.url": result.secure_url,
         "categoryimage.public_id": result.public_id,
       })
-      fs.unlink(path.join(__dirname, `../../src/categoryimages/${req.file.filename}`), (error) => {
+      fs.unlink(path.join(__dirname, `./../src/categoryimages/${req.file.filename}`), (error) => {
         if (error) { console.log(error) }
       })
       return res.send({ message: "updated" })

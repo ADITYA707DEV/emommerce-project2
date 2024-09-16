@@ -78,6 +78,9 @@ function Modal(props) {
 
        if(response.status == 200 && imageResponse.status == 200){
         props.setShowAlert({show:true,text:res.message,colour:"success"})
+       }else{
+        console.log(response)
+        console.log(imageResponse)
        }
        
         props.getItems()
