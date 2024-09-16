@@ -16,7 +16,7 @@ function Success() {
   const placeOrder = async  ()=>{
     const paymentId =  searchParams.get("session_id")
    
-    const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking", {
+    const res = await fetch("https://emommerce-project2-1.onrender.com/user/orderTracking", {
       method: "POST",
       headers: {
           "Content-Type": "application/json"
@@ -41,7 +41,7 @@ function Success() {
 
 
 
-const res2 = await fetch("https://emommerce-project2.onrender.com/api/orders", {
+const res2 = await fetch("https://emommerce-project2-1.onrender.com/api/orders", {
   method: "POST",
   headers: {
       "Content-Type": "application/json"

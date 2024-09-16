@@ -37,7 +37,7 @@ const handleCart = (e) => {
 
 
   const updateMainReview = async () => {
-    const res = await fetch("https://emommerce-project2.onrender.com/items/overallreviews", {
+    const res = await fetch("https://emommerce-project2-1.onrender.com/items/overallreviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -82,7 +82,7 @@ const handleCart = (e) => {
 
 
   const seeReviews = async () => {
-    const response = await fetch("https://emommerce-project2.onrender.com/items/getreviews", {
+    const response = await fetch("https://emommerce-project2-1.onrender.com/items/getreviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -114,7 +114,7 @@ const handleCart = (e) => {
     const rate = parseFloat(document.getElementById("userRating").value)
 
 
-    const response = await fetch("https://emommerce-project2.onrender.com/items/reviews", {
+    const response = await fetch("https://emommerce-project2-1.onrender.com/items/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

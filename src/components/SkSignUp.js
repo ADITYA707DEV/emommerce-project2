@@ -24,7 +24,7 @@ function SkSignUp() {
  
    
    
-      const response = await fetch("https://emommerce-project2.onrender.com/api/skAccount",{
+      const response = await fetch("https://emommerce-project2-1.onrender.com/api/skAccount",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",

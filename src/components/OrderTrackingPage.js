@@ -9,7 +9,7 @@ function OrderTrackingPage() {
   const details = useSelector((state)=>{return state.userData})
 
   const removeOrder = async  (id)=>{
-    const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking",{
+    const res = await fetch("https://emommerce-project2-1.onrender.com/user/orderTracking",{
       method: "DELETE",
       credentials:"include",
       headers:{
@@ -26,7 +26,7 @@ function OrderTrackingPage() {
     getTrackedOrders()
   }
   const getTrackedOrders = async () => {
-    const res = await fetch("https://emommerce-project2.onrender.com/user/getorders" , { 
+    const res = await fetch("https://emommerce-project2-1.onrender.com/user/getorders" , { 
       method:"POST",
       credentials: "include",
       headers:{

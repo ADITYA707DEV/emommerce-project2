@@ -23,7 +23,7 @@ function CardItem(props) {
   
   
   const handeDeleteShopItem = async  ()=>{
-  const res = await fetch("https://emommerce-project2.onrender.com/items/deleteItems", {
+  const res = await fetch("https://emommerce-project2-1.onrender.com/items/deleteItems", {
     method: "POST",
     credentials: "include",
     headers: {

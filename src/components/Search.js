@@ -15,7 +15,7 @@ const [Items,setItems] = useState([])
 const[searchItem,setSearchItem] = useState("")
 
 const getItems = async ()=>{
-    const res = await fetch("https://emommerce-project2.onrender.com/items/getallitems")
+    const res = await fetch("https://emommerce-project2-1.onrender.com/items/getallitems")
     const response = await res.json()
     setItems(response)
  

@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false}))
 app.use(cors({
     credentials:true,
 
-    origin:["https://emommerce-project2.onrender.com","http://localhost:3000","http://localhost:5000",]
+    origin:["https://emommerce-project2-1.onrender.com","http://localhost:3000","http://localhost:5000",]
 }))
 
 

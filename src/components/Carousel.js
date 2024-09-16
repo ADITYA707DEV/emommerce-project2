@@ -8,7 +8,7 @@ function Carousel() {
 
     const [top,settop] = useState(null)
     const getTopRatedItems = async ()=>{
-      const res = await fetch("https://emommerce-project2.onrender.com/items/toprated")
+      const res = await fetch("https://emommerce-project2-1.onrender.com/items/toprated")
       const response = await res.json()
       
       settop(response.tr)

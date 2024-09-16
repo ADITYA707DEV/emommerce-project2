@@ -20,7 +20,7 @@ function CartPage() {
 
   
      const onDeleivery = async ()=>{
-        const res = await fetch("https://emommerce-project2.onrender.com/user/orderTracking", {
+        const res = await fetch("https://emommerce-project2-1.onrender.com/user/orderTracking", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -46,7 +46,7 @@ function CartPage() {
       
       if(res.status === 200){
       
-      const res2 = await fetch("https://emommerce-project2.onrender.com/api/orders", {
+      const res2 = await fetch("https://emommerce-project2-1.onrender.com/api/orders", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -81,7 +81,7 @@ function CartPage() {
 
     const paying = async () => {
         const stripe = await loadStripe('pk_test_51PuatxP5i1YBGuOcOEg0nJWxy0pcdmL29JePtCJAs7xyQOddpVh8yIBhWJ8s7fNuWAL7F66FbKmdJWc3dxYG054O008JTd4HAL');
-        const response = await fetch("https://emommerce-project2.onrender.com/payment/checkout",{
+        const response = await fetch("https://emommerce-project2-1.onrender.com/payment/checkout",{
           
             method:"POST",
             credentials:"include",
@@ -103,12 +103,12 @@ function CartPage() {
        
         
         
-        // const response = await fetch("https://emommerce-project2.onrender.com/payment/pay",{S
+        // const response = await fetch("https://emommerce-project2-1.onrender.com/payment/pay",{S
         //     method:"GET"
 
         // })
         // const res = await response.json()
-        // const paymentResponse = await fetch("https://emommerce-project2.onrender.com/payment/pay",{
+        // const paymentResponse = await fetch("https://emommerce-project2-1.onrender.com/payment/pay",{
         //     method:"POST",
         //     headers: {
         //         "Content-Type": "application/json"

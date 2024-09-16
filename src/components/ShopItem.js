@@ -20,7 +20,7 @@ function ShopItem() {
   const [showAlert,setShowAlert] = useState({show:false,text:null,colour:null})
 
 const handleLogout = async ()=>{
-  const res = await fetch("https://emommerce-project2.onrender.com/api/keeperlogout",{
+  const res = await fetch("https://emommerce-project2-1.onrender.com/api/keeperlogout",{
     method: "GET",
     
      credentials: 'include'
@@ -45,7 +45,7 @@ const handleLogout = async ()=>{
 
 
   const handleDeleteAccount = async ()=>{
-    const res = await fetch("https://emommerce-project2.onrender.com/api/skAccount",{
+    const res = await fetch("https://emommerce-project2-1.onrender.com/api/skAccount",{
       method:"DELETE",
       credentials:"include"
     })
@@ -62,7 +62,7 @@ const handleLogout = async ()=>{
   const getItems = async () => {
 
     if (Token.authorised === true) {
-      const res = await fetch("https://emommerce-project2.onrender.com/items/getItems", {
+      const res = await fetch("https://emommerce-project2-1.onrender.com/items/getItems", {
         method: "POST",
         credentials: "include",
         headers: {

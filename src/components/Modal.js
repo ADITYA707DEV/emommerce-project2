@@ -39,7 +39,7 @@ function Modal(props) {
    
    setLoading(true)
 
-       const response = await fetch("https://emommerce-project2.onrender.com/items/includeItems",{
+       const response = await fetch("https://emommerce-project2-1.onrender.com/items/includeItems",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
@@ -67,7 +67,7 @@ function Modal(props) {
         file.append("file",image)
         
         const imageResponse = await axios({
-         url:"https://emommerce-project2.onrender.com/items/uploadImage",
+         url:"https://emommerce-project2-1.onrender.com/items/uploadImage",
          
          withCredentials: true,
          method:"POST",

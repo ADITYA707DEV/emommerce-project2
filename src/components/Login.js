@@ -20,7 +20,7 @@ function Login() {
  const [showAlert,setShowAlert] = useState({show:false,text:null,colour:null})
   
    const automatic = async ()=>{
-    const response = await fetch("https://emommerce-project2.onrender.com/user/userlogin",{
+    const response = await fetch("https://emommerce-project2-1.onrender.com/user/userlogin",{
       method: "GET",
       headers:{
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ function Login() {
       event.preventDefault()
      
 
-    const response = await fetch("https://emommerce-project2.onrender.com/user/userlogin",{
+    const response = await fetch("https://emommerce-project2-1.onrender.com/user/userlogin",{
       method: "POST",
       headers:{
         "Content-Type": "application/json",
