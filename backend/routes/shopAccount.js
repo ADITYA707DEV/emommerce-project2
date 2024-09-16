@@ -22,7 +22,9 @@ cloudinary.config({
   api_key: "374941848855849",
   api_secret: "uvREhaeFw2ZWD-oFJLAb1RoypRk",
 });
-
+__dirname_1 = path.resolve()
+console.log("this dirname for routes")
+console.log(__dirname)
 
 
 const { body, validationResult, cookie } = require("express-validator")
