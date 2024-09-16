@@ -80,7 +80,7 @@ router.post("/getItems",fetchUser,async (req,res)=>{
 
 const storage = multer.diskStorage({
   destination: (req,file,cb) =>{
-    cb(null,path.join(__dirname,"./build" ))
+    cb(null,path.resolve(__dirname,"../","../","./build"))
   },
   filename:(req,file,cb)=>{
          cb(null,new Date().toISOString().replace(/:/g, '-') + file.originalname)
@@ -98,7 +98,7 @@ try {
   const current = await shop.findByIdAndUpdate(itemId,{src:result.secure_url})
 
 
-   fs.unlink(path.join(__dirname,`./build/${req.file.filename}` ),(error)=>{
+   fs.unlink(path.resolve(__dirname,"../","../",`./build/${req.file.filename}`),(error)=>{
     if(error){console.log(error)}
   })
 res.send({message:"item image uploaded"})

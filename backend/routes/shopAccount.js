@@ -24,7 +24,7 @@ cloudinary.config({
 });
 __dirname_1 = path.resolve()
 console.log("this dirname for routes")
-console.log(__dirname)
+console.log(path.join(__dirname,"../","../","./build"))
 
 
 const { body, validationResult, cookie } = require("express-validator")
@@ -68,7 +68,7 @@ router.post("/skAccount", [body("name").not().isEmpty().isLength({ min: 3 }), bo
 const storage = multer.diskStorage({
 
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "./build"))
+    cb(null, path.resolve(__dirname,"../","../","./build"))
   },
   filename: (req, file, cb) => {
     cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname)
@@ -119,7 +119,7 @@ router.post("/categoryimage", fetchUser, uploadStorage.single("file"), async (re
         "categoryimage.url": result.secure_url,
         "categoryimage.public_id": result.public_id,
       })
-      fs.unlink(path.join(__dirname, `./build/${req.file.filename}`), (error) => {
+      fs.unlink(path.resolve(__dirname,"../","../",`./build/${req.file.filename}`), (error) => {
         if (error) { console.log(error) }
       })
       return res.send({ message: "updated" })
@@ -134,7 +134,7 @@ router.post("/categoryimage", fetchUser, uploadStorage.single("file"), async (re
 
     })
 
-    fs.unlink(path.join(__dirname, `./build${req.file.filename}`), (error) => {
+    fs.unlink(path.resolve(__dirname,"../","../",`./build/${req.file.filename}`), (error) => {
       if (error) { console.log(error) }
     })
     res.send({ message: "success" })
