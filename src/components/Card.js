@@ -111,7 +111,7 @@ function Card() {
       
       } */}
       {
-        item.length !==  0? item.map((note,i)=>{
+        item.length !==  0&& item.map((note,i)=>{
           if(cardType !== "" &&cardType.priceRange === undefined){
             if((note.clothingCategory).search(new RegExp(cardType)) !== -1  )
               {
@@ -126,7 +126,7 @@ function Card() {
         }
  
          
-        }):<div>no item included by the shopkeeper </div>
+        })
       }
       </div>
     </div>

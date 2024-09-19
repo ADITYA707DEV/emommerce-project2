@@ -1,8 +1,8 @@
 import React from 'react'
-import sample from "../images/sample.png"
+
 import { useSelector, useDispatch } from 'react-redux'
 import { useRef, useState, useEffect } from 'react'
-
+import Alerts from './Alerts'
 
 
 
@@ -20,7 +20,7 @@ function Item() {
   const Dispatch = useDispatch()
   const [customerReviews, setCustomerReviews] = useState({ reviews: [] })
   const [choiceCart, setChoiceCart] = useState(item)
-
+  const [showAlert,setShowAlert] = useState({show:false,text:null,colour:null})
   
 const handleSize = (e)=>{
 // setChoiceCart({size:e.target.value})
@@ -130,11 +130,15 @@ const handleCart = (e) => {
     })
 
     const res = await response.json()
+    if(response.status == 200){
+      setShowAlert({show:true,text:res.message,colour:"success"})
+    }
 
     seeReviews()
   }
   return (
     <div className='container py-5' >
+        {showAlert.show&&<Alerts colour={showAlert.colour} text={showAlert.text} setShowAlert={setShowAlert} show = {showAlert.show}></Alerts>}
       {/* modal launch button */}
       <button type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal" ref={reviewRef}>
 
@@ -154,7 +158,7 @@ const handleCart = (e) => {
               <ul className="list-group">
               {Object.keys(details.data).length?  <div className="card border-0 bg-light">
                   <div className="card-body">
-                    <h5 className="card-title">user1</h5>
+                    <h5 className="card-title">{details.data.name} </h5>
                     <textarea name="userReview" id="userReview" rows="5" style={{ width: "100%" }} placeholder='enter you review here'></textarea>
                     <p className='d-inline'>rating: </p>
                     <input type="text" placeholder='enter rating out of 5' id='userRating' />
@@ -196,14 +200,9 @@ const handleCart = (e) => {
           <div className="card" style={{ width: "100%", height: "24rem" }}>
             <div className="card-body">
               <h5 className="card-title">{item.clothingType}</h5>
-              <h6 className="card-subtitle mb-2 text-body-secondary">reviews: {overallRating}
-                <span><i className="fa-regular fa-star"></i>
-                  <i className="fa-regular fa-star" ></i>
-                  <i className="fa-regular fa-star" ></i>
-                  <i className="fa-regular fa-star" ></i>
-                  <i className="fa-regular fa-star" ></i>
-                </span>
-                <span style={{ cursor: "pointer" }} onClick={() => { reviewRef.current.click() }}>({(customerReviews.reviews).length})
+              <h6 className="card-subtitle mb-2 text-body-secondary "><span className=' mr-2'>reviews: </span>
+              <span className=" ms-auto badge text-bg-warning ">{overallRating}</span>
+                <span className='fw-bold' style={{ cursor: "pointer" }} onClick={() => { reviewRef.current.click() }}>({(customerReviews.reviews).length})
                 </span>
               </h6>
               <p className="card-text">price: {item.price}</p>

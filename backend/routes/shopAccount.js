@@ -23,8 +23,6 @@ cloudinary.config({
   api_secret: "uvREhaeFw2ZWD-oFJLAb1RoypRk",
 });
 __dirname_1 = path.resolve()
-console.log("this dirname for routes")
-console.log(path.join(__dirname,"../","../","./build"))
 
 
 const { body, validationResult, cookie } = require("express-validator")
@@ -227,8 +225,7 @@ router.get("/keeperDetails", async (req, res) => {
 
 
 router.post("/orders",verifyUser3,async (req,res)=>{
-  console.log("this is req bosy in orders")
-  console.log(req.body)
+  
   try {
 const orders = await (req.body.order).map( (item)=>{
   const {key,_v,user,overallRating,...rest} = item
@@ -236,7 +233,7 @@ return rest
 
 })
 if(req.body.payment === "online"){
-  console.log("this is running")
+  
   const newOrder = {
     customerDetails: req.body.customerDetails,
     OrderItems: orders,

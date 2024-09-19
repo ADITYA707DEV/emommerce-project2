@@ -21,7 +21,7 @@ const {body, validationResult} = require("express-validator")
 router.post("/userAccount",[body("name").not().isEmpty().isLength({min:5}),body("email").not().isEmpty().isEmail(),body("password").not().isEmpty().isLength({min:5})],async (req,res)=>{
   
       try {
-        console.log(req.body)
+       
         const errors = validationResult(req)
         if(!(errors.isEmpty()) ){
           console.log(errors)
